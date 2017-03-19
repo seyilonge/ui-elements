@@ -1,8 +1,6 @@
-import React from 'react';
-const PropTypes = React.PropTypes;
-
+import React, { PropTypes } from 'react';
 // Stylesheet includes
-import '../../stylesheets/base/button.css';
+import './stylesheets/button.css';
 
 function Button (props) {
     let icon = props.icon,
@@ -19,14 +17,14 @@ function Button (props) {
 
     if (typeof props.iconPosition !== 'undefined' && props.iconPosition === 'right') {
         return (
-            <button className={buttonClass} type="submit" onClick={props.action} aria-hidden={ariaHidden}>
-                {props.label} <span className={props.icon}></span>
+            <button className={buttonClass} type="submit" onClick={props.action} disabled={props.disabled} aria-hidden={ariaHidden}>
+                {props.label} <span className={props.icon} aria-hidden="true"></span>
             </button>
         )
     } else {
         return (
-            <button className={buttonClass} type="submit" onClick={props.action} aria-hidden={ariaHidden}>
-                <span className={props.icon}></span> {props.label}
+            <button className={buttonClass} type="submit" onClick={props.action} disabled={props.disabled} aria-hidden={ariaHidden}>
+                <span className={props.icon} aria-hidden="true"></span> {props.label}
             </button>
         )
     }
@@ -36,6 +34,7 @@ Button.propTypes = {
     name: PropTypes.string,
     label: PropTypes.string.isRequired,
     action: PropTypes.func,
+    disabled: PropTypes.bool,
     displayInline: PropTypes.bool,
     icon: PropTypes.string,
     iconPosition: PropTypes.string,

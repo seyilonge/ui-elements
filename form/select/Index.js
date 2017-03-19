@@ -1,12 +1,11 @@
-var React = require('react');
-var PropTypes = React.PropTypes;
+import React, { PropTypes } from 'react';
 
-var moment = require('moment');
+import moment from 'moment';
 import filter from 'lodash/filter';
 import forOwn from 'lodash/forOwn';
-var Select = require('./Select');
+import Select from './Select';
 
-var Index = React.createClass({
+const Index = React.createClass({
     getInitialState: function() {
         return {
             showError: true
@@ -24,18 +23,18 @@ var Index = React.createClass({
         var targetValue = event.target.value,
             targetID = event.target.getAttribute('id'),
             targetType = event.target.getAttribute('type');
-        
+
         if (targetType === 'select-multiple') {
             const selectedValues = [...event.target.options].filter( (option) => option.selected).map( (option) => option.value);
             this.props.updateFormData(targetID, selectedValues)
         } else {
             this.props.updateFormData(targetID, targetValue);
         }
-        
+
         if(this.props.form.errors.hasErrors) {
             this.toggleErrorDisplay(false)
         }
-        
+
         if(typeof this.props.onInputChange !== 'undefined') {
             this.props.onInputChange(event);
         }
@@ -47,18 +46,18 @@ var Index = React.createClass({
     },
     render: function() {
         return (
-            <Select 
+            <Select
                 id={this.props.id}
                 className = {this.props.className}
-                showError = {this.state.showError} 
+                showError = {this.state.showError}
                 type = {this.props.type}
                 defaultValue = {this.props.defaultValue}
-                disabled = {this.props.disabled} 
-                errors = {this.props.form.errors} 
+                disabled = {this.props.disabled}
+                errors = {this.props.form.errors}
                 items={this.props.items}
                 label = {this.props.label}
                 onInputChange = {this.handleInputChange}
-                required = {this.props.required} 
+                required = {this.props.required}
                 size = {this.props.size}
                 toggleErrorDisplay = {this.toggleErrorDisplay}
                 multiple = {this.props.multiple}
@@ -70,7 +69,7 @@ var Index = React.createClass({
 Index.propTypes = {
     id: PropTypes.string.isRequired,
     items: PropTypes.array.isRequired,
-    type: PropTypes.string.isRequired, 
+    type: PropTypes.string.isRequired,
     onInputChange: PropTypes.func
 }
 

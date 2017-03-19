@@ -7,6 +7,8 @@ var Radio = require('./radio/Index');
 var Checkbox = require('./checkbox/Index');
 var Select = require('./select/Index');
 var MultiSelect = require('./multiselect/Index');
+var MultiSelector = require('./multiselector/Index');
+var SimpleSelect = require('./simpleselect/Index');
 var Textarea = require('./textarea/Index');
 var Button = require('./button/Index');
 
@@ -55,6 +57,8 @@ Index.Radio = connect( mapStateToProps, mapDispatchToProps )(Radio);
 Index.Checkbox = connect( mapStateToProps, mapDispatchToProps )(Checkbox);
 Index.Select = connect( mapStateToProps, mapDispatchToProps )(Select);
 Index.MultiSelect = connect( mapStateToProps, mapDispatchToProps )(MultiSelect);
+Index.MultiSelector = connect( mapStateToProps, mapDispatchToProps )(MultiSelector);
+Index.SimpleSelect = connect( mapStateToProps, mapDispatchToProps )(SimpleSelect);
 Index.Button = connect( mapStateToProps, mapDispatchToProps )(Button);
 Index.Textarea = connect( mapStateToProps, mapDispatchToProps )(Textarea);
 

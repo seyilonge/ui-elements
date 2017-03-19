@@ -1,5 +1,4 @@
-var React = require('react');
-var PropTypes = React.PropTypes;
+import React, { PropTypes } from 'react';
 
 function Checkbox (props) {
     //console.log("Checkboxes: ", props);

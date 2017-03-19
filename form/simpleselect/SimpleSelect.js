@@ -1,30 +1,26 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 
-function Input (props) {
-    //console.log("Inputs: ", props);
-    //console.log("Found error", !typeof props.errors.data === 'undefined');
+const Select = require('react-selectize').SimpleSelect;
+import 'react-selectize/themes/index.css';
+
+function SimpleSelect (props) {
+    //console.log("MultiSelects: ", props);
     const labelClass = props.required ? 'label-required' : '';
+
     if(typeof props.errors.data === 'undefined' || !props.errors.data.hasOwnProperty(props.id)) {
         return (
             <div>
                 <label htmlFor={props.id} className={labelClass}>{props.label}</label>
-                <input
-                    id={props.id}
-                    className ={props.className}
-                    name={props.name}
-                    value={props.value}
-                    disabled={props.disabled}
-                    onChange={props.onInputChange}
-                    placeholder={props.placeholder}
-                    type={props.type}
+                <Select
+                    {...props}
+                    onValueChange={props.onSelectChange.bind(null, props.id)}
                 />
             </div>
         )
-    } else if (props.errors.validated) {
+    } else {
         const toggleDisplay = props.showError ? ' show' : '',
-              errorClass = props.showError ? ' error' : '';
-        //console.log("Error block:", toggleDisplay, props.errors)
+              errorClass = props.showError ? ' form-control-error' : '';
         return (
             <div>
                 <div className={'popover top' + toggleDisplay} role="tooltip">
@@ -40,25 +36,18 @@ function Input (props) {
                 <span>
                     <label htmlFor={props.id} className={labelClass}>{props.label}</label>
                 </span>
-                <span>
-                    <input
-                        id={props.id}
-                        className ={props.className + errorClass}
-                        name={props.name}
-                        value={props.value}
-                        disabled={props.disabled}
-                        onChange={props.onInputChange}
-                        placeholder={props.placeholder}
-                        type={props.type}
-                        onFocus={props.toggleErrorDisplay.bind(null, false)}
+                <div className={errorClass}>
+                    <Select
+                        {...props}
+                        onValueChange={props.onSelectChange.bind(null, props.id)}
                     />
-                </span>
+                </div>
             </div>
         )
     }
 };
 
-Input.propTypes = {
+SimpleSelect.propTypes = {
     className: PropTypes.string,
     showError: PropTypes.bool,
     value: PropTypes.any,
@@ -67,11 +56,12 @@ Input.propTypes = {
     id: PropTypes.string,
     label: PropTypes.string,
     name: PropTypes.string,
-    onInputChange: PropTypes.func,
+    onSelectChange: PropTypes.func,
     placeholder: PropTypes.string,
     required: PropTypes.bool,
-    toggleErrorDisplay: PropTypes.func.isRequired,
-    type: PropTypes.string
+    size: PropTypes.string,
+    tab: PropTypes.string,
+    toggleErrorDisplay: PropTypes.func.isRequired
 };
 
-module.exports = Input;
+module.exports = SimpleSelect;

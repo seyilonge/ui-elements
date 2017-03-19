@@ -1,0 +1,11 @@
+/* ==================
+      Loader Styles
+=================== */
+.gs-loader {
+    padding-bottom: 65px;
+    text-align: center;
+}
+.gs-loader .text-tag {
+    margin-top: -60px;
+    font-size: 1.2em;
+}

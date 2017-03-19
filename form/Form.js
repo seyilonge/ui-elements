@@ -1,5 +1,6 @@
-var React = require('react');
-var PropTypes = React.PropTypes;
+import React, { PropTypes } from 'react';
+// Stylesheet includes
+import '../stylesheets/form.css';
 
 function Form (props) {
     //var formInputs = props.children.getElementsByName("input");

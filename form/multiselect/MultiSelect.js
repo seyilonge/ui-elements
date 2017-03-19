@@ -6,16 +6,15 @@ import 'react-selectize/themes/index.css';
 
 function MultiSelect (props) {
     //console.log("MultiSelects: ", props);
-    const labelClass = props.required ? 'label-required' : '',
-          tabIndex = typeof props.tabIndex !== 'undefined' ? props.tabIndex : 0,
-          multiSelect = props.type === 'select-multiple' ? true : false;
+    const labelClass = props.required ? 'label-required' : '';
+
     if(typeof props.errors.data === 'undefined' || !props.errors.data.hasOwnProperty(props.id)) {
         return (
             <div>
                 <label htmlFor={props.id} className={labelClass}>{props.label}</label>
                 <Select
                     {...props}
-                    onValuesChange={props.onValuesChange.bind(null, props.id)}
+                    onValuesChange={props.onSelectChange.bind(null, props.id)}
                 />
             </div>
         )
@@ -37,25 +36,12 @@ function MultiSelect (props) {
                 <span>
                     <label htmlFor={props.id} className={labelClass}>{props.label}</label>
                 </span>
-                <span>
-                    <select
-                        id={props.id}
-                        type={props.type}
-                        className={props.className + errorClass}
-                        defaultValue={props.defaultValue}
-                        disabled={props.disabled}
-                        label={props.label}
-                        size={props.size}
-                        onChange={props.onInputChange}
-                        multiple={multiSelect}>
-                            {props.items.map( (thisItem, index) => {
-                                return (
-                                    <option key={index} value={thisItem.value}>{thisItem.label}</option>
-                                )
-                            })}
-                        onFocus={props.toggleErrorDisplay.bind(null, false)}
-                    </select>
-                </span>
+                <div className={errorClass}>
+                    <Select
+                        {...props}
+                        onValuesChange={props.onSelectChange.bind(null, props.id)}
+                    />
+                </div>
             </div>
         )
     }
@@ -64,19 +50,18 @@ function MultiSelect (props) {
 MultiSelect.propTypes = {
     className: PropTypes.string,
     showError: PropTypes.bool,
-    defaultValue: PropTypes.any,
+    value: PropTypes.any,
     disabled: PropTypes.string,
     errors: PropTypes.object.isRequired,
     id: PropTypes.string,
     label: PropTypes.string,
     name: PropTypes.string,
-    onValuesChange: PropTypes.func,
+    onSelectChange: PropTypes.func,
     placeholder: PropTypes.string,
     required: PropTypes.bool,
     size: PropTypes.string,
     tab: PropTypes.string,
-    toggleErrorDisplay: PropTypes.func.isRequired,
-    type: PropTypes.string
+    toggleErrorDisplay: PropTypes.func.isRequired
 };
 
 module.exports = MultiSelect;

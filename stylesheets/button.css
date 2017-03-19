@@ -1,0 +1,47 @@
+/* ============================
+      Base Button Styles
+============================ */
+
+
+.btn {
+    border-radius: 3px;
+}
+
+.btn .glyphicon {
+    margin-top: -3px;
+    font-size: 1em;
+    vertical-align: middle;
+}
+
+.btn-in-form,
+.btn-primary {
+    color: #045aac;
+    font-weight: 600;
+    background-color: #fff;
+}
+
+.btn-in-form {
+    margin-top: -1px;
+    margin-left: 3px;
+    padding: 3px 6px;
+    border-width: 1px;
+}
+
+.btn-primary {
+    margin: 10px 20px 0 0;
+    padding: 7px 10px;
+    border: 2px solid #045aac;
+    text-transform: uppercase;
+}
+.btn-primary.btn-xsm {
+    margin-top: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 0 5px;
+    font-size: 0.8em;
+}
+
+.btn-clear,
+.btn-default {
+    opacity: 0.7;
+}

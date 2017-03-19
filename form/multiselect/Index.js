@@ -1,12 +1,11 @@
-var React = require('react');
-var PropTypes = React.PropTypes;
+import React, { PropTypes } from 'react';
 
-var moment = require('moment');
+import moment from 'moment';
 import filter from 'lodash/filter';
 import forOwn from 'lodash/forOwn';
-var MultiSelect = require('./MultiSelect');
+import MultiSelect from './MultiSelect';
 
-var Index = React.createClass({
+const Index = React.createClass({
     getInitialState: function() {
         return {
             showError: true
@@ -19,30 +18,19 @@ var Index = React.createClass({
             }
             this.props.setFormConstraint(this.props.id, this.props.validation);
         }
+        //console.log("Multiselect Props", this)
     },
-    onValuesChange: function(id, selectedValues) {
-        /*
-        var targetValue = event.target.value,
-            targetID = event.target.getAttribute('id'),
-            targetType = event.target.getAttribute('type');
-
-        if (targetType === 'select-multiple') {
-            const selectedValues = [...event.target.options].filter( (option) => option.selected).map( (option) => option.value);
-            this.props.updateFormData(targetID, selectedValues)
-        } else {
-            this.props.updateFormData(targetID, targetValue);
-        }
+    handleSelectChange: function(id, selectedValues) {
+        this.props.updateFormData(id, selectedValues)
+        //console.log("Multiselect values", id, selectedValues);
 
         if(this.props.form.errors.hasErrors) {
             this.toggleErrorDisplay(false)
         }
 
-        if(typeof this.props.onValuesChange !== 'undefined') {
-            this.props.onValuesChange(event);
+        if(typeof this.props.onSelectChange !== 'undefined') {
+            this.props.onSelectChange(id, selectedValues)
         }
-        */
-        this.props.updateFormData(id, selectedValues)
-        //console.log("Multiselect values", id, selectedValues);
     },
     toggleErrorDisplay: function(flag) {
         this.setState({
@@ -55,7 +43,7 @@ var Index = React.createClass({
                 {...this.props}
                 showError = {this.state.showError}
                 errors = {this.props.form.errors}
-                onValuesChange = {this.onValuesChange}
+                onSelectChange = {this.handleSelectChange}
                 toggleErrorDisplay = {this.toggleErrorDisplay}
             />
         )

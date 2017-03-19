@@ -13,7 +13,7 @@ function Textarea (props) {
                     id={props.id}
                     className ={props.className}
                     cols={props.cols}
-                    defaultValue={props.defaultValue}
+                    value={props.value}
                     disabled={props.disabled}
                     onChange={props.onInputChange}
                     rows={props.rows}
@@ -44,7 +44,7 @@ function Textarea (props) {
                         id={props.id}
                         className ={props.className}
                         cols={props.cols}
-                        defaultValue={props.defaultValue}
+                        value={props.value}
                         disabled={props.disabled}
                         onFocus={props.toggleErrorDisplay.bind(null, false)}
                         onChange={props.onInputChange}
@@ -60,7 +60,7 @@ function Textarea (props) {
 Textarea.propTypes = {
     className: PropTypes.string,
     cols: PropTypes.string,
-    defaultValue: PropTypes.any,
+    value: PropTypes.any,
     disabled: PropTypes.string,
     errors: PropTypes.object.isRequired,
     id: PropTypes.string,

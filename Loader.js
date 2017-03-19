@@ -1,4 +1,5 @@
-var React = require('react');
+import React from 'react';
+import './stylesheets/loader.css';
 
 function Loader () {
     return (

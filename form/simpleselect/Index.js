@@ -2,8 +2,9 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 
 var moment = require('moment');
+import filter from 'lodash/filter';
 import forOwn from 'lodash/forOwn';
-var Textarea = require('./Textarea');
+var SimpleSelect = require('./SimpleSelect');
 
 var Index = React.createClass({
     getInitialState: function() {
@@ -18,19 +19,18 @@ var Index = React.createClass({
             }
             this.props.setFormConstraint(this.props.id, this.props.validation);
         }
+        //console.log("Simpleselect Props", this)
     },
-    handleInputChange: function(event) {
-        var targetValue = event.target.value,
-            targetID = event.target.getAttribute('id'),
-            targetType = event.target.getAttribute('type');
+    handleSelectChange: function(id, selectedValues) {
+        this.props.updateFormData(id, selectedValues)
+        //console.log("Simpleselect values", id, selectedValues);
 
         if(this.props.form.errors.hasErrors) {
             this.toggleErrorDisplay(false)
         }
 
-        this.props.updateFormData(targetID, targetValue);
-        if(typeof this.props.onInputChange !== 'undefined') {
-            this.props.onInputChange(event);
+        if(typeof this.props.onSelectChange !== 'undefined') {
+            this.props.onSelectChange(id, selectedValues)
         }
     },
     toggleErrorDisplay: function(flag) {
@@ -40,19 +40,11 @@ var Index = React.createClass({
     },
     render: function() {
         return (
-            <Textarea
-                id={this.props.id}
-                className = {this.props.className}
-                cols = {this.props.cols}
+            <SimpleSelect
+                {...this.props}
                 showError = {this.state.showError}
-                type = {this.props.type}
-                value = {this.props.value}
-                disabled = {this.props.disabled}
                 errors = {this.props.form.errors}
-                label = {this.props.label}
-                onInputChange = {this.handleInputChange}
-                required = {this.props.required}
-                rows = {this.props.row}
+                onSelectChange = {this.handleSelectChange}
                 toggleErrorDisplay = {this.toggleErrorDisplay}
             />
         )
@@ -60,7 +52,8 @@ var Index = React.createClass({
 });
 
 Index.propTypes = {
-    id: PropTypes.string.isRequired
+    id: PropTypes.string.isRequired,
+    options: PropTypes.array.isRequired
 }
 
 module.exports = Index;

@@ -112,7 +112,7 @@ var Index = React.createClass({
         if(typeof this.props.onInputChange !== 'undefined') {
             this.props.onInputChange(event);
         }
-        //console.log(targetID, targetType, targetValue);
+        console.log(targetID, targetType, targetValue, event.target.files);
     },
     toggleErrorDisplay: function(flag) {
         this.setState({
@@ -127,7 +127,7 @@ var Index = React.createClass({
                 showError = {this.state.showError}
                 name = {this.props.name}
                 type = {this.props.type}
-                defaultValue = {this.props.defaultValue}
+                value = {this.props.value}
                 disabled = {this.props.disabled}
                 errors = {this.props.form.errors}
                 label = {this.props.label}

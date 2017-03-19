@@ -1,7 +1,5 @@
-var React = require('react');
-var PropTypes = React.PropTypes;
-
-var Logo = require('./Logo');
+import React, { PropTypes } from 'react';
+import Logo from './Logo';
 
 function PageTitle (props) {
     var leftContentClass = props.leftContentClass === undefined ? '' : props.leftContentClass,
