@@ -15,7 +15,7 @@ function Button (props) {
         ariaHidden = "true";
     }
 
-    if (typeof props.iconPosition !== 'undefined' && props.iconPosition === 'right') {
+    if (typeof props.icon !== 'undefined' && typeof props.iconPosition !== 'undefined' && props.iconPosition === 'right') {
         return (
             <button className={buttonClass} type="submit" onClick={props.action} disabled={props.disabled} aria-hidden={ariaHidden}>
                 {props.label} <span className={props.icon} aria-hidden="true"></span>
