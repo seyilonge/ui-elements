@@ -2,7 +2,6 @@
   "name": "ui-elements",
   "description": "UI shared elements",
   "version": "0.0.2",
-  "main": "./lib/Helmet.js",
   "author": "Seyi Longe",
   "license": "MIT",
   "repository": {
