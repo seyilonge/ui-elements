@@ -19576,10 +19576,6 @@ module.exports = __webpack_require__("./node_modules/react/lib/React.js");
 "use strict";
 
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
 var _react = __webpack_require__("./node_modules/react/react.js");
 
 var _react2 = _interopRequireDefault(_react);
@@ -19691,10 +19687,9 @@ Button.propTypes = {
     showButton: _propTypes2.default.bool,
     size: _propTypes2.default.string,
     type: _propTypes2.default.string
-};
 
-exports.default = Button;
-module.exports = exports['default'];
+    //export default Button
+};modules.export = Button;
 
 /***/ }),
 

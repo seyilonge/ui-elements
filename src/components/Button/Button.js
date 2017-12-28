@@ -96,4 +96,5 @@ Button.propTypes = {
     type: PropTypes.string
 }
 
-export default Button
+//export default Button
+modules.export = Button
