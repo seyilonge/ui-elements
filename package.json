@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "main": "./dist/1.0.0/index.js",
+  "scripts": {
+    "dev-build": "webpack --env.target development"
+},
+  "repository": "https://github.com/seyilonge/ui-elemnets.git",
+  "author": "seyilonge@gmail.com",
+  "license": "UNLICENSED",
   "dependencies": {
     "classnames": "^2.2.1",
     "compression": "^1.6.0",
