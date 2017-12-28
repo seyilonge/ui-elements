@@ -4,7 +4,7 @@ import classNames from 'classnames'
 
 import './button.css'
 
-function Button (props) {
+export default function Button (props) {
     let icon = props.icon,
         namedClass = props.name ? props.name : "",
         buttonClass,// = props.type === "secondary" ? 'btn btn-secondary btn-sm ' + namedClass : 'btn btn-primary btn-sm ' + namedClass,
@@ -81,20 +81,3 @@ function Button (props) {
         )
     }
 }
-
-Button.propTypes = {
-    name: PropTypes.string,
-    label: PropTypes.string.isRequired,
-    action: PropTypes.func,
-    disabled: PropTypes.bool,
-    displayAsLink: PropTypes.bool,
-    displayInline: PropTypes.bool,
-    icon: PropTypes.string,
-    iconPosition: PropTypes.string,
-    showButton: PropTypes.bool,
-    size: PropTypes.string,
-    type: PropTypes.string
-}
-
-//export default Button
-module.exports = Button
