@@ -97,4 +97,4 @@ Button.propTypes = {
 }
 
 //export default Button
-modules.export = Button
+module.exports = Button

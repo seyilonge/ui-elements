@@ -19689,7 +19689,7 @@ Button.propTypes = {
     type: _propTypes2.default.string
 
     //export default Button
-};modules.export = Button;
+};module.exports = Button;
 
 /***/ }),
 
