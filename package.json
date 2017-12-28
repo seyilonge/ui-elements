@@ -4,7 +4,7 @@
   "private": true,
   "main": "./dist/1.0.0/index.js",
   "scripts": {
-    "dev-build": "webpack --env.target development"
+    "build": "webpack --env.target development"
 },
   "repository": "https://github.com/seyilonge/ui-elemnets.git",
   "author": "seyilonge@gmail.com",

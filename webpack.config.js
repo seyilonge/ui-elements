@@ -36,7 +36,7 @@ module.exports = {
   output: {
     filename:   '[name].js',
     path:       path.join(__dirname, 'dist/', pkg.version),
-    publicPath: '/'
+    libraryTarget: 'umd'
   },
 
   module: {
