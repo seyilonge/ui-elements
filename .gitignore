@@ -1,17 +1,5 @@
-# Untracked project files and directories list
-
-# Logs
-logs
-*.log
-npm-debug.log*
-
-# Custom configurations
-port.config.js
-
-# Project dependencies
+/lib
 /node_modules
-
-# Project settings
-.project
-.metadata
-/.settings
+/public
+/quick
+/tmp
