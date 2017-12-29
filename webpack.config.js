@@ -24,7 +24,7 @@ function plugins() {
 }
 
 const ENTRY_POINTS = {
-    button: path.join(__dirname, 'src/components/Button/Button.js'),
+    button: path.join(__dirname, 'src/components/Button/index.js'),
     footer: path.join(__dirname, 'src/components/Footer/Footer.js')
 }
 

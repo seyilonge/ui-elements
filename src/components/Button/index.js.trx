@@ -1,3 +1,0 @@
-var Button = require('./Button')
-//export default Button
-module.exports = Button;
