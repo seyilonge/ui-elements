@@ -19589,7 +19589,6 @@ module.exports = __webpack_require__("./node_modules/react/lib/React.js");
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.default = Button;
 
 var _react = __webpack_require__("./node_modules/react/react.js");
 
@@ -19669,7 +19668,7 @@ function Button(props) {
         ariaHidden = "false";
     }
 
-    buttonClass = (0, _classnames2.default)(buttonClass, className);
+    //buttonClass = classNames(buttonClass, className)
 
     if (typeof props.iconPosition !== 'undefined' && props.iconPosition === 'right') {
         return _react2.default.createElement(
@@ -19689,6 +19688,22 @@ function Button(props) {
         );
     }
 }
+
+Button.propTypes = {
+    name: _propTypes2.default.string,
+    label: _propTypes2.default.string.isRequired,
+    action: _propTypes2.default.func,
+    disabled: _propTypes2.default.bool,
+    displayAsLink: _propTypes2.default.bool,
+    displayInline: _propTypes2.default.bool,
+    icon: _propTypes2.default.string,
+    iconPosition: _propTypes2.default.string,
+    showButton: _propTypes2.default.bool,
+    size: _propTypes2.default.string,
+    type: _propTypes2.default.string
+};
+
+exports.default = Button;
 module.exports = exports['default'];
 
 /***/ }),
