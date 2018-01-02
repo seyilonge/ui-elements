@@ -5,22 +5,15 @@
   "main": "./dist/1.0.0/index.js",
   "scripts": {
     "build": "webpack --env.target development"
-},
+  },
   "repository": "https://github.com/seyilonge/ui-elemnets.git",
   "author": "seyilonge@gmail.com",
   "license": "UNLICENSED",
   "dependencies": {
     "classnames": "^2.2.1",
-    "compression": "^1.6.0",
-    "ejs": "^2.3.4",
-    "errorhandler": "^1.4.2",
-    "express": "^4.13.3",
-    "morgan": "^1.6.1",
     "prop-types": "^15.6.0",
     "react": "^0.14.3",
-    "react-dom": "^0.14.3",
-    "serve-favicon": "^2.3.0",
-    "static-expiry": "0.0.11"
+    "react-dom": "^0.14.3"
   },
   "devDependencies": {
     "babel-cli": "^6.3.15",
