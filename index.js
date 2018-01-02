@@ -3,5 +3,5 @@
 //const Button = require('./dist/1.0.0/button')
 //module.exports = Button;
 //export Button as Button
-import { Button } from './dist/1.0.0/button'
+import Button from './dist/1.0.0/button'
 export { Button }
