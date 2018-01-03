@@ -70,10 +70,66 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/components/Footer/Footer.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./node_modules/classnames/index.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+  Copyright (c) 2016 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+*/
+/* global define */
+
+(function () {
+	'use strict';
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames () {
+		var classes = [];
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes.push(arg);
+			} else if (Array.isArray(arg)) {
+				classes.push(classNames.apply(null, arg));
+			} else if (argType === 'object') {
+				for (var key in arg) {
+					if (hasOwn.call(arg, key) && arg[key]) {
+						classes.push(key);
+					}
+				}
+			}
+		}
+
+		return classes.join(' ');
+	}
+
+	if (typeof module !== 'undefined' && module.exports) {
+		module.exports = classNames;
+	} else if (true) {
+		// register as 'classnames', consistent with npm package name
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function () {
+			return classNames;
+		}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	} else {
+		window.classNames = classNames;
+	}
+}());
+
+
+/***/ }),
 
 /***/ "./node_modules/fbjs/lib/EventListener.js":
 /***/ (function(module, exports, __webpack_require__) {
@@ -19524,7 +19580,7 @@ module.exports = __webpack_require__("./node_modules/react/lib/React.js");
 
 /***/ }),
 
-/***/ "./src/components/Footer/Footer.js":
+/***/ "./src/Button/Button.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19542,59 +19598,172 @@ var _propTypes = __webpack_require__("./node_modules/prop-types/index.js");
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-__webpack_require__("./src/components/Footer/footer.css");
+var _classnames = __webpack_require__("./node_modules/classnames/index.js");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+__webpack_require__("./src/Button/button.css");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function Footer(props) {
-    //const classes = classNames(styles.default, styles[size], block && styles.block, className)
-    return _react2.default.createElement(
-        'footer',
-        { className: 'footer' },
-        _react2.default.createElement(
-            'div',
-            { className: 'row' },
-            _react2.default.createElement(
-                'div',
-                { className: 'footer-links' },
-                _react2.default.createElement(
-                    'div',
-                    null,
-                    _react2.default.createElement(
-                        'ul',
-                        { className: 'nav navbar-nav', role: 'navigation' },
-                        props.items.map(function (footerItem, index) {
-                            return _react2.default.createElement(
-                                'li',
-                                { key: index },
-                                _react2.default.createElement(
-                                    'a',
-                                    { href: footerItem.link, target: '_blank' },
-                                    footerItem.label
-                                )
-                            );
-                        })
-                    )
-                )
-            )
-        )
-    );
-}
-//import classNames from 'classnames'
+function Button(props) {
+    var icon = props.icon,
+        namedClass = props.name ? props.name : "",
+        buttonClass = void 0,
+        // = props.type === "secondary" ? 'btn btn-secondary btn-sm ' + namedClass : 'btn btn-primary btn-sm ' + namedClass,
+    ariaHidden = void 0;
 
-Footer.propTypes = {
-    items: _propTypes2.default.array.isRequired
+    switch (props.type) {
+        case 'primary':
+            buttonClass = (0, _classnames2.default)('btn', 'btn-primary');
+            break;
+        case 'secondary':
+            buttonClass = (0, _classnames2.default)('btn', 'btn-secondary');
+            break;
+        case 'info':
+            buttonClass = (0, _classnames2.default)('btn', 'btn-info');
+            break;
+        case 'success':
+            buttonClass = (0, _classnames2.default)('btn', 'btn-success');
+            break;
+        case 'warning':
+            buttonClass = (0, _classnames2.default)('btn', 'btn-warning');
+            break;
+        case 'failure':
+            buttonClass = (0, _classnames2.default)('btn', 'btn-failure');
+            break;
+        case 'default':
+            buttonClass = (0, _classnames2.default)('btn', 'btn-default');
+            break;
+        default:
+            buttonClass = (0, _classnames2.default)('btn', 'btn-primary');
+            break;
+    }
+
+    switch (props.size) {
+        case 'small':
+            buttonClass = (0, _classnames2.default)(buttonClass, 'btn-sm');
+            break;
+        case 'large':
+            buttonClass = (0, _classnames2.default)(buttonClass, 'btn-lg');
+            break;
+        case 'extra small':
+            buttonClass = (0, _classnames2.default)(buttonClass, 'btn-xs');
+            break;
+        default:
+            buttonClass = (0, _classnames2.default)(buttonClass, 'btn-sm');
+            break;
+    }
+    buttonClass = (0, _classnames2.default)(buttonClass, namedClass);
+
+    if (props.displayAsLink) {
+        buttonClass = (0, _classnames2.default)(buttonClass, 'btn-link');
+    }
+
+    if (typeof props.showButton !== "undefined" && !props.showButton) {
+        buttonClass = (0, _classnames2.default)(buttonClass, 'hidden');
+        ariaHidden = "true";
+    } else {
+        buttonClass = buttonClass;
+        ariaHidden = "false";
+    }
+
+    //buttonClass = classNames(buttonClass, className)
+
+    if (typeof props.iconPosition !== 'undefined' && props.iconPosition === 'right') {
+        return _react2.default.createElement(
+            'button',
+            { name: props.name, className: buttonClass, type: 'submit', onClick: props.action, disabled: props.disabled, 'aria-hidden': ariaHidden },
+            props.label,
+            ' ',
+            props.icon && _react2.default.createElement('span', { className: props.icon, 'aria-hidden': 'true' })
+        );
+    } else {
+        return _react2.default.createElement(
+            'button',
+            { name: props.name, className: buttonClass, type: 'submit', onClick: props.action, disabled: props.disabled, 'aria-hidden': ariaHidden },
+            props.icon && _react2.default.createElement('span', { className: props.icon, 'aria-hidden': 'true' }),
+            ' ',
+            props.label
+        );
+    }
+}
+
+Button.propTypes = {
+    name: _propTypes2.default.string,
+    label: _propTypes2.default.string.isRequired,
+    action: _propTypes2.default.func,
+    disabled: _propTypes2.default.bool,
+    displayAsLink: _propTypes2.default.bool,
+    displayInline: _propTypes2.default.bool,
+    icon: _propTypes2.default.string,
+    iconPosition: _propTypes2.default.string,
+    showButton: _propTypes2.default.bool,
+    size: _propTypes2.default.string,
+    type: _propTypes2.default.string
 };
 
-exports.default = Footer;
+exports.default = Button;
 module.exports = exports['default'];
 
 /***/ }),
 
-/***/ "./src/components/Footer/footer.css":
+/***/ "./src/Button/button.css":
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./src/Button/index.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _Button = __webpack_require__("./src/Button/Button.js");
+
+Object.defineProperty(exports, 'default', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_Button).default;
+  }
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = exports['default'];
+
+/***/ }),
+
+/***/ "./src/index.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Button = undefined;
+
+var _Button = __webpack_require__("./src/Button/index.js");
+
+var _Button2 = _interopRequireDefault(_Button);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//export Button from './Button';
+//export { default as Footer } from './dist/1.0.0/footer'
+//const Button = require('./dist/1.0.0/button')
+//module.exports = Button;
+//export Button as Button
+//import Button from './dist/1.0.0/button'
+exports.Button = _Button2.default;
 
 /***/ })
 

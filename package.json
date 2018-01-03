@@ -1,10 +1,10 @@
 {
-  "name": "bable-plugin-css-in-js-example",
+  "name": "ui-elements",
   "version": "1.0.0",
   "private": true,
-  "main": "./index.js",
+  "main": "./dist/1.0.0/index.js",
   "scripts": {
-    "build": "webpack --env.target development"
+    "build": "node scripts/build.js"
   },
   "repository": "https://github.com/seyilonge/ui-elemnets.git",
   "author": "seyilonge@gmail.com",
@@ -28,6 +28,7 @@
     "css-loader": "^0.28.7",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.5",
+    "fs-extra": "^5.0.0",
     "path": "^0.12.7",
     "style-loader": "^0.19.0",
     "url-loader": "^0.6.2",

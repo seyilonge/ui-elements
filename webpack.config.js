@@ -11,7 +11,7 @@ function plugins() {
   var production = [
     //new ExtractTextPlugin('[name].css'),
     new ExtractTextPlugin({
-        filename:  'css/[name].css',
+        filename:  'css/' + pkg.name + '.css',
         allChunks: true
     }),
     new webpack.NamedModulesPlugin(),
@@ -23,18 +23,21 @@ function plugins() {
   return all.concat(production);
 }
 
+/*
 const ENTRY_POINTS = {
     button: path.join(__dirname, 'src/components/Button/index.js'),
     footer: path.join(__dirname, 'src/components/Footer/Footer.js')
 }
+*/
 
 module.exports = {
   cache: true,
-  //entry: path.join(__dirname, 'src'),
-  entry: ENTRY_POINTS,
+  entry: path.join(__dirname, 'src/index.js'),
+  //entry: ENTRY_POINTS,
 
   output: {
-    filename:   '[name].js',
+    //filename:  pkg.name + '.js',
+    filename:  'index.js',
     path:       path.join(__dirname, 'dist/', pkg.version),
     libraryTarget: 'umd'
   },
@@ -44,7 +47,9 @@ module.exports = {
         {
             test: /\.js$/,
             exclude: /node_modules/,
-            loader: 'babel-loader',
+            use: {
+                loader: 'babel-loader?cacheDirectory=true',
+            }
         },
         {
             test: /\.css$/,
