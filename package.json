@@ -14,10 +14,10 @@
     "classnames": "^2.2.1",
     "prop-types": "^15.6.0",
     "react": "^0.14.3",
+    "react-addons-transition-group": "^15.6.2",
     "react-dom": "^0.14.3",
     "react-onclickoutside": "^6.7.0",
-    "react-transition-group": "^2.2.1",
-    "tg-modal": "^0.8.0-alpha.3"
+    "tg-modal": "^0.7.1"
   },
   "devDependencies": {
     "babel-cli": "^6.3.15",

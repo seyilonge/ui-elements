@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TGModal from 'tg-modal';
+
+//import 'tg-modal/dist/default.css';
 import './modal.css';
 
 function Modal (props) {
