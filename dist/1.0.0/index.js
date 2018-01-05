@@ -78,7 +78,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ "./assets/images/gs_logo.svg":
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "assets/3d3a6001bd436f386055070fa71a3bf2.svg";
+module.exports = __webpack_require__.p + "assets/images/3d3a6001bd436f386055070fa71a3bf2.svg";
 
 /***/ }),
 
