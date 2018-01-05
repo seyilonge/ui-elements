@@ -16,7 +16,7 @@ function plugins() {
     }),
     new webpack.NamedModulesPlugin(),
     //new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
-    new webpack.DefinePlugin({ 'process.env': { NODE_ENV: JSON.stringify('production') } })
+    new webpack.DefinePlugin({ 'process.env': { NODE_ENV: JSON.stringify('development') } })
   ];
 
   //return process.env.NODE_ENV === 'production' ? all.concat(production) : all;
