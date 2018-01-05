@@ -1,0 +1,118 @@
+/* ===============
+    Header Styles
+   =============== */
+.container-fluid {
+    padding-right: 30px;
+}
+
+header {
+    margin-bottom: 20px;
+    height: 85px;
+}
+header h1 {
+    margin-top: 12px;
+    margin-bottom: 0;
+    margin-left: -1px;
+    padding-left: 11px;
+    display: inline-block;
+    font-size: 30px;
+    border-left: 1px solid #ccc;
+    vertical-align: middle;
+}
+/* :::::::::::: Remove block ::::::::::::: */
+header h2 {
+    padding: 30px 0 10px;
+    color: #045aac;
+    font-size: 38px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e5e5e5;
+    text-transform: uppercase;
+    word-spacing: 10px;
+}
+header p {
+    margin-bottom: 0;
+    padding: 12px 0 0;
+    color: #333;
+    font-size: 17px;
+    font-weight: 300;
+}
+/* :::::::::::: End remove block :::::::::::: */
+
+.navbar {
+    margin: auto;
+    width: 73.95701643489254%;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+}
+.navbar.full-width {
+    width: 100%;
+}
+.navbar-default {
+    background-color: white;
+}
+.navbar-brand {
+    height: auto;
+    display: inline-block;
+    min-width: 152px;
+    float: none;
+    box-sizing: content-box;
+}
+
+/* :::::::::::::::::::::::::::::::::
+            Media Queries
+   ::::::::::::::::::::::::::::::::: */
+
+@media (max-width: 768px) {
+    header {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+   .navbar {
+       width: 100%;
+   }
+}
+
+@media (max-width: 480px) {
+    .container-fluid {
+        padding-right: 15px;
+    }
+
+    header {
+        height: 240px;
+    }
+    header h1 {
+        margin-top: -5px;
+        margin-left: 0;
+        padding: 0;
+        display: block;
+        text-align: center;
+        border: none;
+    }
+
+    .navbar-brand {
+        display: block;
+        text-align: center;
+    }
+}
+
+/* :::::::::::::::::::::::::
+        Print Styles
+   ::::::::::::::::::::::::: */
+@media print {
+    header nav, header .navbar {
+        display: block;
+    }
+
+    header .print { display: block }
+
+    body header h1 {
+        margin-top: 20px;
+        margin-left: -22px;
+        display: inline-block;
+        line-height: 38px;
+    }
+}

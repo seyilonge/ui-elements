@@ -1,0 +1,21 @@
+/* ============================
+      Breadcrumbs Styles
+============================ */
+
+.breadcrumb {
+    margin: -10px 0 0 -15px;
+    font-size: 1em;
+    background-color: transparent;
+}
+.breadcrumb > li+li::before {
+    content: "/";
+}
+
+/* :::::::::::::::::::::::::
+        Print Styles
+   ::::::::::::::::::::::::: */
+@media print {
+    button {
+        display: none !important;
+    }
+}

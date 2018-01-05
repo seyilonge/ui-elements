@@ -1,0 +1,41 @@
+/* ======================
+    Page Title Styles
+====================== */
+
+/*
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+NOTE:   To avoid side effects please append all style declarations with
+        container class name (e.g .page-title .right-content)
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+*/
+
+h2.page-title {
+    margin-top: 0;
+    margin-bottom: 30px;
+    padding-top: 18px;
+    color: #4a4a4a;
+    font-size: 18px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+/*=========================
+        Media Queries
+ ==========================*/
+
+@media (max-width: 480px) {
+    h2.page-title {
+
+    }
+}
+
+/* :::::::::::::::::::::::::
+        Print Styles
+   ::::::::::::::::::::::::: */
+@media print {
+    h2.page-title {
+        margin-bottom: 0;
+        margin-left: 15px;
+        padding-top: 5px;
+    }
+}

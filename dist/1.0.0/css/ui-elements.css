@@ -42,3 +42,522 @@
         display: none !important;
     }
 }
+/* =================
+    Alert Styles
+================== */
+
+.gs-alert.alert {
+    margin-bottom: 10px;
+    padding: 8px;
+    color: #333;
+    border: 2px solid #fff;
+    border-radius: 1px;
+    text-align: center;
+    background-color: transparent !important;
+}
+.gs-alert.alert.dismissible {
+    border-color: #999;
+}
+.gs-alert.alert > div {
+    text-align: left;
+}
+.gs-alert.alert .content-container {
+    margin: 0;
+}
+.gs-alert.alert button.close {
+    font-size: 14px;
+}
+.gs-alert.alert .alert-title {
+    text-align: right;
+}
+.gs-alert.alert.dismissible .alert-title {
+    padding-top: 10px;
+}
+.gs-alert.alert .alert-title::before {
+    font-size: 3em;
+    font-family: 'FontAwesome';
+}
+.gs-alert.alert.alert-success .alert-title::before {
+    color: #417505;
+    content: "\F05D";
+}
+.gs-alert.alert.alert-warning .alert-title::before {
+    color: #f5a623;
+    content: "\F071";
+}
+.gs-alert.alert.alert-danger .alert-title::before {
+    color: #e6412e;
+    content: "\F05C";
+}
+.gs-alert.alert.alert-info .alert-title::before {
+    color: #4a90e2;
+    content: "\F05A";
+}
+.gs-alert.alert .alert-title h4 {
+    margin-bottom: 0;
+    font-size: 1.142857142857143em;
+}
+
+.gs-alert.alert .alert-content {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-left: 1px solid #ccc;
+    min-height: 78px;
+}
+
+.gs-alert.alert .alert-content p.support-text {
+    margin-top: 10px;
+}
+.gs-alert.alert .alert-buttons {
+    margin-top: 10px;
+}
+
+/* :::::::::::::::::::::::::::::::::
+            Media Queries
+   ::::::::::::::::::::::::::::::::: */
+@media (max-width: 480px) {
+    .gs-alert.alert .alert-title {
+        text-align: left;
+    }
+
+    .gs-alert.alert .alert-title::before, .gs-alert.alert .alert-title h4 {
+        display: inline-block;
+    }
+    .gs-alert.alert .alert-title::before {
+        font-size: 2.5em;
+    }
+    .gs-alert.alert .alert-title h4 {
+        top: 50%;
+        padding-left: 10px;
+        font-size: 16px;
+        transform: translateY(-50%);
+    }
+
+    .gs-alert.alert .alert-content {
+        border-top: 1px solid #ccc;
+        border-left: none;
+    }
+}
+/* ============================
+      Breadcrumbs Styles
+============================ */
+
+.breadcrumb {
+    margin: -10px 0 0 -15px;
+    font-size: 1em;
+    background-color: transparent;
+}
+.breadcrumb > li+li::before {
+    content: "/";
+}
+
+/* :::::::::::::::::::::::::
+        Print Styles
+   ::::::::::::::::::::::::: */
+@media print {
+    button {
+        display: none !important;
+    }
+}
+/* ===============
+    Footer Styles
+   =============== */
+
+/* ::::: Over-ride defaults to allow footer stay at the bottom *(Not sticky) ::::: */
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+body {
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+footer {
+    margin-top: 32px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: 0.8em;
+    font-weight: bold;
+    background-color: #073664;
+    min-height: 30px;
+    text-align: center;
+}
+
+footer .footer-links {
+	opacity: 0.7;
+	font-weight: 100;
+}
+footer .footer-links .navbar-nav {
+   margin: 0 auto;
+   float: none;
+}
+footer .footer-links .navbar-nav li {
+   display: inline-block;
+   float: none;
+}
+
+footer a,
+footer a:hover,
+footer a:focus,
+footer a:visited {
+   color: #fff !important;
+   text-decoration: none !important;
+}
+
+footer a:hover {
+   opacity: .7;
+}
+
+footer ul {
+   list-style-type: none;
+   padding-left: 0;
+   margin-top: 6px;
+}
+
+footer .navbar-nav li a:hover {
+   background-color: transparent;
+}
+
+/* :::::::::::::::::::::::::
+        Print Styles
+   ::::::::::::::::::::::::: */
+@media print {
+    footer { display: none }
+}
+/* ==============
+   Logo Styles
+============== */
+
+.gs-logo img {
+    height: 54px;
+    width: auto;
+}
+
+/* :::::::::::::::::::::::::
+        Print Styles
+   ::::::::::::::::::::::::: */
+@media print {
+    .gs-logo img {
+        margin-left: 15px;
+        height: 40px;
+        text-align: center !important;
+    }
+}
+/* =============
+    Menu Styles
+   ============= */
+
+.navbar-nav {
+    margin-top: 22px;
+}
+
+.navbar-nav ul.dropdown-menu {
+    min-width: 100%;
+    border-radius: 0px;
+}
+
+.navbar-nav li.dropdown:first-child > a {
+    font-size: 0.9em;
+}
+.navbar-nav li.dropdown span.fa {
+    font-size: 1em;
+    vertical-align: baseline;
+}.navbar-nav li.dropdown span.fa.fa-user {
+    margin-right: 2px;
+}
+.navbar-nav ul.dropdown-menu li a.logout-link {
+    cursor: pointer;
+}
+
+/* :::::::::::::::::::::::::::::::::
+            Media Queries
+   ::::::::::::::::::::::::::::::::: */
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 480px) {
+
+}
+
+/* :::::::::::::::::::::::::
+        Print Styles
+   ::::::::::::::::::::::::: */
+@media print {
+    ul.nav.navbar-nav {
+        display: none;
+    }
+}
+/* ===============
+    Header Styles
+   =============== */
+.container-fluid {
+    padding-right: 30px;
+}
+
+header {
+    margin-bottom: 20px;
+    height: 85px;
+}
+header h1 {
+    margin-top: 12px;
+    margin-bottom: 0;
+    margin-left: -1px;
+    padding-left: 11px;
+    display: inline-block;
+    font-size: 30px;
+    border-left: 1px solid #ccc;
+    vertical-align: middle;
+}
+/* :::::::::::: Remove block ::::::::::::: */
+header h2 {
+    padding: 30px 0 10px;
+    color: #045aac;
+    font-size: 38px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e5e5e5;
+    text-transform: uppercase;
+    word-spacing: 10px;
+}
+header p {
+    margin-bottom: 0;
+    padding: 12px 0 0;
+    color: #333;
+    font-size: 17px;
+    font-weight: 300;
+}
+/* :::::::::::: End remove block :::::::::::: */
+
+.navbar {
+    margin: auto;
+    width: 73.95701643489254%;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+}
+.navbar.full-width {
+    width: 100%;
+}
+.navbar-default {
+    background-color: white;
+}
+.navbar-brand {
+    height: auto;
+    display: inline-block;
+    min-width: 152px;
+    float: none;
+    box-sizing: content-box;
+}
+
+/* :::::::::::::::::::::::::::::::::
+            Media Queries
+   ::::::::::::::::::::::::::::::::: */
+
+@media (max-width: 768px) {
+    header {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+   .navbar {
+       width: 100%;
+   }
+}
+
+@media (max-width: 480px) {
+    .container-fluid {
+        padding-right: 15px;
+    }
+
+    header {
+        height: 240px;
+    }
+    header h1 {
+        margin-top: -5px;
+        margin-left: 0;
+        padding: 0;
+        display: block;
+        text-align: center;
+        border: none;
+    }
+
+    .navbar-brand {
+        display: block;
+        text-align: center;
+    }
+}
+
+/* :::::::::::::::::::::::::
+        Print Styles
+   ::::::::::::::::::::::::: */
+@media print {
+    header nav, header .navbar {
+        display: block;
+    }
+
+    header .print { display: block }
+
+    body header h1 {
+        margin-top: 20px;
+        margin-left: -22px;
+        display: inline-block;
+        line-height: 38px;
+    }
+}
+/* ==================
+      Loader Styles
+   ================== */
+.gs-loader {
+    padding-top: 45px;
+    padding-bottom: 65px;
+    text-align: center;
+}
+.gs-loader .fa-spinner {
+    font-size: 4em;
+}
+form .gs-loader .fa-spinner {
+    font-size: 1.8em;
+}
+
+.gs-loader .text-tag {
+    padding-top: 10px;
+    font-size: 1.2em;
+}
+form .gs-loader .text-tag {
+    padding-top: 5px;
+    font-size: 0.95em;
+}
+/* ============================
+      Modal Styles
+============================ */
+
+.gs-modal .modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.gs-modal .modal {
+    display: block;
+}
+
+.gs-modal .modal .modal-header {
+    /*text-align: center;*/
+    color: #fff;
+    background-color: #3d678d;
+}
+.gs-modal .modal .modal-dialog .modal-content {
+    border-radius: 4px;
+}
+.gs-modal .modal .modal-dialog .modal-content .modal-header .modal-title {
+    padding: 0;
+    font-size: 20px;
+    max-width: 90%;
+}
+.gs-modal .modal .modal-dialog .modal-content .modal-header .close {
+    padding: 0;
+	position: absolute;
+	top: 3rem;
+    width: 4rem;
+	height: 4rem;
+	right: 0.8rem;
+	color: #3c3c50;
+	font-size: 1.25em;
+    cursor: pointer;
+    opacity: 1;
+	background: transparent;
+	border: 0px none transparent;
+    border-radius: 20px;
+	transition: background 300ms ease;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+.gs-modal .modal .modal-dialog .modal-content .modal-header .close:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+.gs-modal .modal .modal-dialog .modal-content .modal-header .close span {
+    color: #3d678d;
+    text-shadow: none;
+}
+.gs-modal .modal .modal-dialog .modal-content .modal-header .close span::after {
+    margin-left: -10px;
+    color: #fff;
+    font-size: 2em;
+    font-family: "FontAwesome";
+    font-weight: 100;
+    content: "\F05C";
+}
+
+.gs-modal .gs-alert.alert {
+    margin-bottom: 0;
+}
+.gs-modal .gs-alert.alert .alert-title {
+    padding-top: 0;
+}
+.gs-modal .gs-alert.alert .alert-title::before {
+    font-size: 3em;
+}
+
+/* :::::::::::::::::::::::::::::::::
+            Media Queries
+   ::::::::::::::::::::::::::::::::: */
+
+@media (max-width: 480px) {
+    .modal-dialog {
+        width: 90%;
+    }
+    .gs-modal .gs-alert.alert .alert-title {
+        margin-top: -10px;
+    }
+}
+/* ======================
+    Page Title Styles
+====================== */
+
+/*
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+NOTE:   To avoid side effects please append all style declarations with
+        container class name (e.g .page-title .right-content)
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+*/
+
+h2.page-title {
+    margin-top: 0;
+    margin-bottom: 30px;
+    padding-top: 18px;
+    color: #4a4a4a;
+    font-size: 18px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+/*=========================
+        Media Queries
+ ==========================*/
+
+@media (max-width: 480px) {
+    h2.page-title {
+
+    }
+}
+
+/* :::::::::::::::::::::::::
+        Print Styles
+   ::::::::::::::::::::::::: */
+@media print {
+    h2.page-title {
+        margin-bottom: 0;
+        margin-left: 15px;
+        padding-top: 5px;
+    }
+}

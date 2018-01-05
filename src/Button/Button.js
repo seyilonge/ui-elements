@@ -9,7 +9,7 @@ function Button (props) {
         namedClass = props.name ? props.name : "",
         buttonClass,// = props.type === "secondary" ? 'btn btn-secondary btn-sm ' + namedClass : 'btn btn-primary btn-sm ' + namedClass,
         ariaHidden
-
+    console.log("Button Props: ", props);
     switch (props.type) {
         case 'primary':
             buttonClass = classNames('btn', 'btn-primary')

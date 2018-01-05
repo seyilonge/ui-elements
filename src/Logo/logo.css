@@ -1,0 +1,19 @@
+/* ==============
+   Logo Styles
+============== */
+
+.gs-logo img {
+    height: 54px;
+    width: auto;
+}
+
+/* :::::::::::::::::::::::::
+        Print Styles
+   ::::::::::::::::::::::::: */
+@media print {
+    .gs-logo img {
+        margin-left: 15px;
+        height: 40px;
+        text-align: center !important;
+    }
+}

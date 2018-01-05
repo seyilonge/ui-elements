@@ -1,0 +1,353 @@
+/* ============================
+      Base Form Styles
+============================ */
+span.download {
+    cursor: pointer;
+    text-decoration: underline;
+}
+.form-container {
+    margin-bottom: 30px;
+}
+
+header.form-header h2 {
+    margin-bottom: 20px;
+    padding: 30px 0 10px;
+    color: #045aac;
+    font-size: 38px;
+    font-weight: 300;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e5e5;
+    word-spacing: 10px;
+}
+header.form-header p {
+    padding: 12px 0 0;
+    color: #333;
+    font-size: 17px;
+    font-weight: 300;
+}
+
+legend {
+    padding-top: 25px;
+    padding-bottom: 5px;
+    color: #045aac;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-bottom: none;
+    text-transform: uppercase;
+}
+
+.gs-input {
+    padding: 10px;
+}
+.gs-legend {
+    margin-bottom: 5px;
+}
+
+label,
+.gs-legend {
+    color: rgba(0, 24, 69, 0.84);
+    font-weight: 600;
+    display: block;
+}
+.gs-legend.label-required {
+    display: block;
+}
+.gs-legend.label-required.inline {
+    display: inline-block;
+}
+.label-required::after,
+.gs-legend.label-required::after {
+    content: " *";
+    color: #e74c3c;
+}
+
+.label-secondary {
+    font-weight: 400;
+}
+
+div.inline,
+label.inline {
+    display: inline-block;
+}
+
+.gs-label-overide {
+    display: inline-block;
+    color: #333;
+    font-weight: normal;
+}
+
+.gs-file-upload {
+    position: relative;
+}
+.gs-file-upload > div {
+    color: rgba(0, 24, 69, 0.84);
+    font-weight: 600;
+    display: block;
+}
+.gs-file-upload label {
+    padding: 5px 8px;
+    display: inline-block;
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid #333;
+    background: #045aac;
+
+
+}
+.gs-file-upload input {
+    /*opacity: 0;*/
+    display: none;
+}
+.gs-file-upload ul {
+    margin-bottom: 25px;
+    padding: 0;
+    background-color: #fff;
+}
+.gs-file-upload ul li {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding: 3px 8px;
+    list-style: none;
+}
+.gs-file-upload ul li::before {
+    display: inline-block;
+    margin-right: 8px;
+    padding-left: 3px;
+    font-family: 'FontAwesome';
+    content:"\f1c1";
+    width: 12px;
+    vertical-align: middle;
+}
+.gs-file-upload ul li span {
+    margin-right: 10px;
+    width: 12%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.gs-file-upload ul li > span:first-child {
+    width: 35%;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+.gs-file-upload ul li > span:last-child {
+    width: 5%;
+    cursor: pointer;
+
+}
+.gs-file-upload ul li > span:last-child::after {
+    display: inline-block;
+    width: 12px;
+    content:"\f00d";
+    font-family: 'FontAwesome';
+}
+.gs-file-upload ul li .file-upload-progress {
+    width: 35%;
+    font-size: 1em;
+    font-weight: normal;
+}
+.gs-file-upload ul li .file-upload-progress .progressbar > span {
+    width: 100%;
+    color: #fff;
+    text-align: center;
+}
+
+.form-submission .btn {
+    margin: 10px 20px 0 0;
+    padding: 7px 25px;
+}
+
+.fieldset-wrapper {
+    padding: 5px;
+}
+
+.fieldset-wrapper form {
+}
+
+.fieldset-wrapper fieldset {
+    padding: 10px;
+}
+
+.fieldset-wrapper fieldset.fieldset-read-only label {
+    color: #6c6b6b;
+    font-weight: 200;
+}
+
+.fieldset-wrapper .fieldset {
+    margin:0;
+    padding: 10px;
+    min-width:0;
+    border:0
+}
+
+.fieldset-wrapper .fieldset.fieldset-read-only label {
+    color: #6c6b6b;
+    font-weight: 200;
+}
+
+.gs-recaptcha {
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+.gs-recaptcha > div {
+    display: block !important;
+}
+.gs-recaptcha .grecaptcha-badge {
+    right: 0 !important;
+    position: relative !important;
+}
+
+.checkbox-label {
+    font-weight: normal;
+}
+input[type=checkbox],
+input[type=radio] {
+    margin-right: 5px;
+}
+input.error,
+.form-control-error {
+    border: 1px solid red;
+}
+div.form-control-error {
+    border-radius: 4px;
+}
+
+.form-container form .not-valid {
+    border: 1px solid red;
+}
+
+.form-container form .section-content {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.form-container form .form-data-label {
+    margin-bottom: 5px;
+    color: rgba(0, 24, 69, 0.84);
+    font-weight: 600;
+}
+.form-container form .form-data-value {
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #eee;
+}
+
+.gs-form-container .gs-select-group {
+    padding: 2px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+}
+.gs-form-container .gs-select-group > div {
+    display: inline-block;
+    width: 95%;
+}
+.gs-form-container .gs-select-group > div > span {
+    margin: 2px;
+    padding: 5px;
+    display: inline-block;
+
+}
+.gs-form-container .multi-select .selected-item {
+    color: #08c;
+    border: 1px solid #c9e6f2;
+    border-radius: 2px;
+    background: #f2f9fc;
+}
+/*
+.gs-form-container .multi-select .selected-item::after {
+    padding: 5px;
+    font-family: 'FontAwesome';
+    content: "\f00d";
+    cursor: pointer;
+}
+.gs-form-container .multi-select .selected-item:hover::after {
+    color: #08f;
+}
+*/
+.gs-form-container .multi-select > i {
+    position: absolute;
+    top: 50%;
+    font-size: 18px;
+    transform: translateY(-50%);
+}
+
+.gs-form-container .select-container {
+    padding-left: 8px;
+    width: 100%;
+    height: 200px;
+    overflow: scroll;
+}
+.gs-form-container .select-container [class^="gs-select-options"],
+.gs-form-container .select-container [class*=" gs-select-options"] {
+    padding-left: 2px;
+}
+.gs-form-container .select-container [class^="gs-select-options"]:hover,
+.gs-form-container .select-container [class*=" gs-select-options"]:hover {
+    background-color: #ccc;
+    cursor: pointer;
+}
+.gs-form-container .select-container input[type=checkbox] {
+    margin-left: 0;
+}
+
+.gs-form-container .select-container label.checkbox span {
+    padding-left: 18px;
+}
+
+.gs-input.form-radio-inline {
+    display: inline-block;
+}
+
+.gs-form-container .help-text {
+    display: inline;
+}
+
+.gs-form-container .help-text .fa-info-circle {
+    margin-left: 5px;
+    color: #045aac;
+    cursor: pointer;
+}
+
+.gs-form-container .help-text a {
+    text-decoration: none;
+}
+
+.gs-form-container .__react_component_tooltip {
+    width: 300px;
+}
+
+.gs-formfield-error {
+    margin-left: 0;
+    padding-left: 0;
+    font-size: 12px;
+    list-style: none;
+}
+.gs-formfield-error li {
+    font-style: italic;
+}
+
+/* :::::::::::::::::::::::::::
+        Media Queries
+::::::::::::::::::::::::::: */
+
+@media (max-width: 480px) {
+    .form-group {
+        margin-right: 15px;
+    }
+}
+
+/* :::::::::::::::::::::::::
+        Print Styles
+   ::::::::::::::::::::::::: */
+@media print {
+    .form-container, textarea {
+        border: none !important;
+    }
+}

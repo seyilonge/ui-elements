@@ -1,0 +1,46 @@
+/* =============
+    Menu Styles
+   ============= */
+
+.navbar-nav {
+    margin-top: 22px;
+}
+
+.navbar-nav ul.dropdown-menu {
+    min-width: 100%;
+    border-radius: 0px;
+}
+
+.navbar-nav li.dropdown:first-child > a {
+    font-size: 0.9em;
+}
+.navbar-nav li.dropdown span.fa {
+    font-size: 1em;
+    vertical-align: baseline;
+}.navbar-nav li.dropdown span.fa.fa-user {
+    margin-right: 2px;
+}
+.navbar-nav ul.dropdown-menu li a.logout-link {
+    cursor: pointer;
+}
+
+/* :::::::::::::::::::::::::::::::::
+            Media Queries
+   ::::::::::::::::::::::::::::::::: */
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 480px) {
+
+}
+
+/* :::::::::::::::::::::::::
+        Print Styles
+   ::::::::::::::::::::::::: */
+@media print {
+    ul.nav.navbar-nav {
+        display: none;
+    }
+}

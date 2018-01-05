@@ -64,16 +64,23 @@ module.exports = {
             // Set mimetype just in case.
             loader: 'url-loader',
             options: {
-                name: 'fonts/[hash].[ext]',
+                name: 'assets/fonts/[hash].[ext]',
                 limit: 50000,
                 mimetype: 'application/font-woff',
             },
         },
         {
-            test: /\.(ttf|svg|eot)$/,
+            test: /\.(ttf|eot)$/,
             loader: 'file-loader',
             options: {
-                name: 'fonts/[hash].[ext]',
+                name: 'assets/fonts/[hash].[ext]',
+            },
+        },
+        {
+            test: /\.(png|svg)$/,
+            loader: 'file-loader',
+            options: {
+                name: 'assets/[hash].[ext]',
             },
         }
     ]

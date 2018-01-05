@@ -1,0 +1,23 @@
+/* ==================
+      Loader Styles
+   ================== */
+.gs-loader {
+    padding-top: 45px;
+    padding-bottom: 65px;
+    text-align: center;
+}
+.gs-loader .fa-spinner {
+    font-size: 4em;
+}
+form .gs-loader .fa-spinner {
+    font-size: 1.8em;
+}
+
+.gs-loader .text-tag {
+    padding-top: 10px;
+    font-size: 1.2em;
+}
+form .gs-loader .text-tag {
+    padding-top: 5px;
+    font-size: 0.95em;
+}

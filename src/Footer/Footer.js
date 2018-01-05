@@ -1,11 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-//import classNames from 'classnames'
 
 import './footer.css'
 
 function Footer (props) {
-    //const classes = classNames(styles.default, styles[size], block && styles.block, className)
+    console.log("Footer Props: ", props);
     return (
         <footer className="footer">
             <div className="row">
